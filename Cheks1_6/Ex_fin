@@ -1,0 +1,215 @@
+// ЗАЧЕТ
+
+// получить результаты двух промисов (числа) и вывести их сумму в консоль
+// let prom1 = new Promise((resolve, reject) => { // промис 1
+//   setTimeout(() => {
+//       resolve('alex');
+//   }, 1000);
+// }
+// );
+// let prom2 = new Promise((resolve, reject) => { // промис 2
+//   setTimeout(() => {
+//       resolve("_kar");
+//   }, 2000);
+// }
+// );
+// Promise.all([prom1, prom2]).then(res => { // вывод результата
+//   console.log(res[0] + res[1]);
+// }
+// );
+
+/// const array = [
+//     {age:10, text: "Twitter"},
+//     {age:20, text: "Facebook"},
+//     {age:30, text: "Instagram"},
+//     ];
+// const sum = array.map(item => item.text.length).reduce((sum, item) => sum + item);   // получаем сумму длин строк
+// const sum = array.map(item => item.text[item.text.length - 1]).reduce((sum, item) => sum + item);   // получаем rkm
+// const sum = array.map(item => item.age).reduce((sum, item) => sum + item);          // получаем сумму всех age
+// const sum = array.map(item => item.text[0].toUpperCase()).reduce((sum, item) => sum + item);  // получаем TFI
+
+// ЗАЧЕТ
+// Задание 1
+
+// const arr = [
+//   {name: "Маша", age: 25, isMan: false},
+//   {name: "Саша", age: 38, isMan: true},
+//   {name: "Катя", age: 17, isMan: false},
+//   {name: "Ваня", age: 10, isMan: true},
+//   {name: "Максим", age: 40, isMan: true},
+//  ];
+
+// //1. Вывести массив мальчиков
+// let res1 = arr.filter(item => item.isMan);
+// console.log(res1);
+
+// //2. Из первых букв женских имен сделать аббревиатуру
+// let res2 = arr.filter(item => !item.isMan).map(item => item.name[0]).join('');
+// console.log(res2);
+
+// //3. Найти средний возраст всех участников
+// let res3 = arr.reduce((acc, item) => acc + item.age, 0) / arr.length;
+// console.log(res3);
+
+// let str = "mama";
+// // сосчитать колличество букв а в строке
+// let res = str.match(/a/g).length;
+// console.log(res);
+
+// анонимная функция? это функция без имени. пример анонимной функции.
+// let func = function(a, b) { return a + b; }  // анонимная функция
+// console.log(func(1, 2));
+
+// отличие function declaration от function expression
+// function declaration определяется в момент вызова. Пример: function f() {...}. функцию можно вызвать до ее определения.
+
+// глубокое копирование обьекта в новый обьект методом JSON.parse(JSON.stringify(obj))
+// let main = JSON.stringify(user);
+// let copy = JSON.parse(main);
+
+// Мы можем реализовать глубокое клонирование, используя рекурсию. Или использовать метод _.cloneDeep(obj) из JavaScript-библиотеки lodash.
+
+// отличие VAR, что переменная глобальная и доступна во всем коде.
+// Это поведение называется «hoisting» (всплытие, поднятие), потому что все объявления переменных var «всплывают» в самый верх функции.
+// console.log(test);  // undefined
+// var test = true;
+// переменная let имеет локальную область видимости. нельзя вызвать в конце кода.
+
+// деструктуризация объекта c rest параметрами
+// let obj = {
+//   fName: 'John',
+//   age: 30,
+//   city: 'New York'
+// }
+// let { fName, age, lastName = "Dov", ...rest } = obj;
+
+// деструктуризация массива c rest параметрами
+// let arr = [1, 2, 3, 4, 5];
+// let [a, , с, ...rest] = arr;
+// console.log(a, с, rest);
+
+// Рекурсивное решение
+// function pow(x, n) {
+//   return (n == 1) ? x : (x * pow(x, n - 1));
+// }
+// console.log(pow(2, 3)); // 8
+
+// замыкание. пример ЗАМЫКАНИЯ.
+// function person() {
+//   let name = 'Alex';
+
+//   return function disName() {
+//     console.log(name);
+//   };
+// }
+// person()(); // Alex
+// является ли person() каррированием? да. потому что возвращает функцию. и при вызове возвращается функция которая возвращает имя.
+
+// каррированный вариант функции
+// function multiply(a) {
+//     return (b) => {
+//         return (c) => {
+//             console.log(a * b * c);
+//         }
+//     }
+//   }
+// multiply(1)(2)(3)
+// десь мы преобразовали вызов функции с тремя аргументами — multiply(1,2,3) к вызову трёх функций — multiply(1)(2)(3).
+
+// Equal Sides Of An Array
+// function findEvenIndex(arr) {
+//   function sum(arr) {
+//     return arr.reduce(function (a, b) {
+//       return a + b;
+//     }, 0);
+//   }
+
+// What century is it? CodeWars.
+// function whatCentury(year) {
+//   let century = Math.ceil(year / 100);
+//   if (century > 10 && century < 20) return century + "th";
+//   switch (century % 10) {
+//     case 1: return century + "st";
+//     case 2: return century + "nd";
+//     case 3: return century + "rd";
+//     default: return century + "th";
+//   }
+// }
+// console.log(whatCentury(2000)); // 20th
+
+// более короткий вариант
+// const whatCentury = year =>
+//   (val => val + (val > 10 && val < 21 ? `th` : [`th`, `st`, `nd`, `rd`][val % 10] || `th`))
+//   (Math.ceil(year / 100));
+
+
+// persistence bugger. codeWars.
+// function persistence(num) {
+//   num = num.toString().split('')
+//   let result = 0
+//   while(num.length > 1){
+//     result ++
+//     num = num.reduce((pre,cur) => pre*cur,1).toString().split('')
+//   }
+//   return result
+// }
+// console.log(persistence(39)); 
+
+
+// Завершите функцию, которая принимает строку в качестве аргумента, представляющего текущее состояние света, и возвращает строку, представляющую состояние, в которое должен измениться свет.
+// function updateLight(current) {
+//   return current === 'yellow' ? 'red' : current === 'green' ? 'yellow' : 'green';
+// }
+// console.log(updateLight('green')); // 'yellow'
+
+
+// Your task is to write a function which returns the time since midnight in milliseconds.
+// const past = (h,m,s) => 1000 * (3600 * h + 60 * m + s);
+// console.log( past(0, 1, 1) );
+
+
+// operation(string/char), value1(number), value2(number). Функция должна возвращать результат чисел после применения выбранной операции.
+// function basicOp(o, a, b) {
+//   return eval(a+o+b); // eval метод для выполнения строки как кода
+// }
+// console.log(calculate('+', 1, 2)); // 3
+// console.log(calculate('-', 1, 2)); // -1
+
+
+// нужно проверить, является ли ваше количество строительных блоков идеальным квадратом.
+// function isSquare(n) {
+//   return Number.isInteger(Math.sqrt(n)); // метод проверки числа на целое квадратное число
+// }
+// console.log(isSquare(25)); // true
+
+
+// Получив массив целых чисел, найдите то, которое появляется нечетное число раз.
+// function findOdd(arr) {
+//   return arr.find((item, index) => arr.filter(el => el == item).length % 2);
+// }
+// console.log(findOdd([1, 1, 2, -2, 5, 2, 4, 4, -1, -2, 5])); // -1
+
+
+// Take a Ten Minutes Walk JS. CodeWars.
+// function isValidWalk(walk) {
+//   return walk.length === 10 && walk.filter(el => el === 'n').length === walk.filter(el => el === 's').length && walk.filter(el => el === 'w').length === walk.filter(el => el === 'e').length;
+  // сперва проверяем длинну массива, потом проверяем количество элементов массива с ключом 'n', потом проверяем количество элементов массива с ключом 's', потом проверяем количество элементов массива с ключом 'w', потом проверяем количество элементов массива с ключом 'e'.
+// }
+
+
+// function isValidWalk(walk) {
+//   var dx = 0
+//   var dy = 0
+//   var dt = walk.length
+
+//   for (var i = 0; i < walk.length; i++) {
+//     switch (walk[i]) {
+//       case 'n': dy--; break
+//       case 's': dy++; break
+//       case 'w': dx--; break
+//       case 'e': dx++; break
+//     }
+//   }
+
+//   return dt === 10 && dx === 0 && dy === 0
+// }
