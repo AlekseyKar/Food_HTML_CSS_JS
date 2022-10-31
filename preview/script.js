@@ -6,3 +6,5 @@ const boxesGet = document.querySelector('.block');
 boxesQuery.forEach(box => {
   if (box.matches('.this')) console.log(box);
 })
+
+console.log(boxesQuery[0].closest('.wrapper'));
