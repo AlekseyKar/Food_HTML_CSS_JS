@@ -1,10 +1,8 @@
 'use strict';
 
-const box = document.querySelector('.box');
-const block = document.querySelector('.block');
+const boxesQuery = document.querySelector('.box');
+const boxesGet = document.querySelector('.block');
 
-console.log(block)
-// проверка операторм ? на наличие блока  
-console.log(block?.textContent);
-
-console.log(1+2);
+boxesQuery.forEach(box => {
+  if (box.matches('.this')) console.log(box);
+})
