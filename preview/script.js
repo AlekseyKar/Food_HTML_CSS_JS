@@ -15,9 +15,9 @@
 // console.log(map);
 
 
-const arr = ['alex', 'bob', 'stive', 'bob'];
+// const arr = ['alex', 'bob', 'stive', 'bob'];
 
-function uniques(arr) {
-  return Array.from(new Set(arr));
-}
- console.log(uniques(arr));
+// function uniques(arr) {
+//   return Array.from(new Set(arr));
+// }
+//  console.log(uniques(arr));
