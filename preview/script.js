@@ -1,10 +1,15 @@
 'use strict';
 
-const boxesQuery = document.querySelector('.box');
-const boxesGet = document.querySelector('.block');
+const shops = [
+  {rice: 200},
+  {rice: 300},
+  {rice: 400},
+];
+const budget = [5000, 12222, 15555];
 
-boxesQuery.forEach(box => {
-  if (box.matches('.this')) console.log(box);
+const map = new Map();
+
+shops.forEach((shop,i) => { 
+  map.set(shop, budget[i]);
 })
-
-console.log(boxesQuery[0].closest('.wrapper'));
+console.log(map);
