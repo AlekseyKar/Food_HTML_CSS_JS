@@ -17,8 +17,7 @@
 
 const arr = ['alex', 'bob', 'stive', 'bob'];
 
-const set = new Set(arr);
-
-set.add('mike');
-
-console.log(set);
+function uniques(arr) {
+  return Array.from(new Set(arr));
+}
+ console.log(uniques(arr));
