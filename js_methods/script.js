@@ -11,5 +11,11 @@ const btns = document.querySelectorAll('button');
 
 // add and remove class 
 btns[0].addEventListener('click', () => {
-  
-})
+  // if (!btns[1].classList.contains("red")) {
+  //   btns[1].classList.add("red");
+  // }else {
+  //   btns[1].classList.remove("red");
+  // }
+  btns[1].classList.toggle("red");
+});
+console.log(btns[0].className);
