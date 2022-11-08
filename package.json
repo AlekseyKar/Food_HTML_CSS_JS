@@ -1,19 +1,14 @@
 {
-  "name": "js_steps",
+  "name": "food",
   "version": "1.0.0",
-  "description": "Сайт расчета суточной нормы каллорий.",
+  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/AlekseyKar/js_steps.git"
-  },
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/AlekseyKar/js_steps/issues"
-  },
-  "homepage": "https://github.com/AlekseyKar/js_steps#readme"
+  "devDependencies": {
+    "json-server": "^0.16.1"
+  }
 }
